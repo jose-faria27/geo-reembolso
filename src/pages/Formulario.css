@@ -1,0 +1,418 @@
+/* BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+.container {
+    background: #f6f7f9;
+    min-height: 100vh;
+}
+
+/* HEADER */
+.header {
+    background: #fff;
+    padding: 18px 60px;
+    border-bottom: 1px solid #eee;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: inherit;
+}
+
+
+.logo img {
+    width: 38px;
+}
+
+.logo h3 {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.logo span {
+    font-size: 13px;
+    color: #888;
+}
+
+/* STEPPER */
+.stepper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 0 30px;
+    gap: 25px;
+}
+
+.step {
+    text-align: center;
+    color: #aaa;
+    font-size: 13px;
+}
+
+.step.active {
+    color: #e30613;
+    font-weight: 600;
+}
+
+.step.done {
+    color: #2e7d32;
+}
+
+.circle {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 6px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.step.active .circle {
+    background: #e30613;
+    color: #fff;
+}
+
+.step.done .circle {
+    background: #2e7d32;
+    color: #fff;
+}
+
+.line {
+    width: 160px;
+    height: 2px;
+    background: #e0e0e0;
+}
+
+.active-line {
+    background: #2e7d32;
+}
+
+/* CARD */
+.card {
+    background: #fff;
+    max-width: 780px;
+    margin: auto;
+    padding: 32px;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+}
+
+/* HEADER CARD */
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.icon-box {
+    background: #fdecee;
+    color: #e30613;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.card-header h2 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.card-header span {
+    font-size: 13px;
+    color: #888;
+}
+
+/* FORM */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.full {
+    grid-column: span 2;
+}
+
+label {
+    font-size: 13px;
+    color: #444;
+    margin-bottom: 6px;
+    display: block;
+}
+
+/* INPUTS */
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #e3e3e3;
+    background: #fafafa;
+    transition: all 0.25s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #e30613;
+    background: #fff;
+    box-shadow: 0 0 0 2px rgba(227, 6, 19, 0.08);
+}
+
+/* TEXTAREA */
+textarea {
+    min-height: 90px;
+    resize: none;
+}
+
+/* UPLOAD */
+.upload-box {
+    border: 2px dashed #e3e3e3;
+    text-align: center;
+    padding: 25px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+    position: relative;
+}
+
+.upload-box:hover {
+    border-color: #e30613;
+    background: #fff5f5;
+}
+
+.upload-box p {
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.upload-box span {
+    font-size: 12px;
+    color: #777;
+}
+
+.upload-box input {
+    position: absolute;
+    opacity: 0;
+    inset: 0;
+    cursor: pointer;
+    z-index: 1;
+}
+
+/* BOTÕES */
+.card .btn-primary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #e30613;
+    color: #fff;
+    border: none;
+    padding: 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.3s;
+    text-align: center;
+    margin-top: 30px;
+}
+
+
+.card .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(227, 6, 19, 0.25);
+}
+
+
+.card .btn-outline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #e30613;
+    padding: 14px;
+    border-radius: 10px;
+    background: transparent;
+    cursor: pointer;
+    transition: 0.3s;
+    color: #e30613;
+    margin-top: 30px;
+}
+
+.card .btn-outline:hover {
+    background: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(227, 6, 19, 0.15);
+}
+
+.full-btn {
+    width: 100%;
+    margin-top: 25px;
+    text-align: center;
+    align-items: center;
+}
+
+/* ACTIONS */
+.actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.actions button {
+    flex: 1;
+}
+
+/* ANIMAÇÃO */
+.fade-in {
+    animation: fade 0.5s ease-in;
+}
+
+.error {
+    color: #e30613;
+    font-size: 12px;
+    margin-top: 4px;
+    display: block;
+}
+
+
+.file-name {
+    display: block;
+    margin-top: 10px;
+    font-size: 13px;
+    color: #333;
+    font-weight: 500;
+}
+
+.file-preview {
+    margin-top: 12px;
+    padding: 10px 12px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 13px;
+    z-index: 2;
+    position: relative;
+}
+
+.remove-file {
+    background: none;
+    border: none;
+    color: #e30613;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.remove-file:hover {
+    transform: scale(1.2);
+}
+
+.add-despesa-btn {
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px dashed #ccc;
+    background: #f9f9f9;
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.add-despesa-btn:hover {
+    transform: scale(1.05);
+    color: #e30613;
+}
+
+.delete-btn {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #777;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.delete-btn:hover {
+    color: #e30613;
+    transform: scale(1.1);
+}
+
+.row {
+    display: flex;
+    gap: 10px;
+}
+
+.row div {
+    flex: 1;
+}
+
+.alert-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #fdecec;
+  border: 1px solid #f5c2c7;
+  color: #a94442;
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.alert-icon {
+  flex-shrink: 0;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .header {
+        padding: 15px 20px;
+    }
+
+    .card {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .full {
+        grid-column: span 1;
+    }
+
+    .actions {
+        flex-direction: column;
+    }
+}
